@@ -16,9 +16,10 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t simple-node .
-  - docker tag simple-node https://hub.docker.com/repository/docker/nowindi/simplenode:latest
+  - docker tag simple-node https://hub.docker.com/repository/docker/nowindi/simple-node
+  # - docker tag simple-node https://hub.docker.com/repository/docker/nowindi/simple-node:latest
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push https://hub.docker.com/repository/docker/nowindi/simplenode
+  - docker push https://hub.docker.com/repository/docker/nowindi/simple-node
