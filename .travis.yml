@@ -15,7 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
+  - docker build -t simple_node .
   - docker tag simple-node https://hub.docker.com/repository/docker/nowindi/simple-node
   # - docker tag simple-node https://hub.docker.com/repository/docker/nowindi/simple-node:latest
 
